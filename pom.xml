@@ -856,6 +856,11 @@
             <artifactId>jackson-databind</artifactId>
             <version>2.18.3</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-text</artifactId>
+            <version>1.10.0</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -949,6 +954,11 @@
                         <artifactId>extra-enforcer-rules</artifactId>
                         <version>1.10.0</version>
                     </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-text</artifactId>
+            <version>1.10.0</version>
+        </dependency>
                 </dependencies>
                 <executions>
                     <execution>
@@ -1032,6 +1042,11 @@
                         <artifactId>maven-fluido-skin</artifactId>
                         <version>${version.fluido}</version>
                     </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-text</artifactId>
+            <version>1.10.0</version>
+        </dependency>
                 </dependencies>
             </plugin>
 
@@ -1079,6 +1094,11 @@
                         <artifactId>spotbugs</artifactId>
                         <version>${version.spotbugs}</version>
                     </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-text</artifactId>
+            <version>1.10.0</version>
+        </dependency>
                 </dependencies>
             </plugin>
 
