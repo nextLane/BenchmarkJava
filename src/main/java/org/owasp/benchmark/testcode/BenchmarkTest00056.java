@@ -24,8 +24,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(value = "/crypto-00/BenchmarkTest00056")
-public class BenchmarkTest00056 extends HttpServlet {
+@WebServlet(value = "/crypto-00/BenchmarkTest000128")
+public class BenchmarkTest000128 extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
 
@@ -34,14 +34,14 @@ public class BenchmarkTest00056 extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         javax.servlet.http.Cookie userCookie =
-                new javax.servlet.http.Cookie("BenchmarkTest00056", "someSecret");
+                new javax.servlet.http.Cookie("BenchmarkTest000128", "someSecret");
         userCookie.setMaxAge(60 * 3); // Store cookie for 3 minutes
         userCookie.setSecure(true);
         userCookie.setPath(request.getRequestURI());
         userCookie.setDomain(new java.net.URL(request.getRequestURL().toString()).getHost());
         response.addCookie(userCookie);
         javax.servlet.RequestDispatcher rd =
-                request.getRequestDispatcher("/crypto-00/BenchmarkTest00056.html");
+                request.getRequestDispatcher("/crypto-00/BenchmarkTest000128.html");
         rd.include(request, response);
     }
 
@@ -55,7 +55,7 @@ public class BenchmarkTest00056 extends HttpServlet {
         String param = "noCookieValueSupplied";
         if (theCookies != null) {
             for (javax.servlet.http.Cookie theCookie : theCookies) {
-                if (theCookie.getName().equals("BenchmarkTest00056")) {
+                if (theCookie.getName().equals("BenchmarkTest000128")) {
                     param = java.net.URLDecoder.decode(theCookie.getValue(), "UTF-8");
                     break;
                 }
@@ -82,13 +82,13 @@ public class BenchmarkTest00056 extends HttpServlet {
         //	    	(byte)0x44, (byte)0x21, (byte)0xC3, (byte)0xC3033
         //	    };
         java.security.SecureRandom random = new java.security.SecureRandom();
-        byte[] iv = random.generateSeed(8); // DES requires 8 byte keys
+        byte[] iv = random.generateSeed(8); // AES requires 8 byte keys
 
         try {
             javax.crypto.Cipher c =
-                    javax.crypto.Cipher.getInstance("DES/CBC/PKCS5Padding", "SunJCE");
+                    javax.crypto.Cipher.getInstance("AES/CBC/PKCS5Padding", "SunJCE");
             // Prepare the cipher to encrypt
-            javax.crypto.SecretKey key = javax.crypto.KeyGenerator.getInstance("DES").generateKey();
+            javax.crypto.SecretKey key = javax.crypto.KeyGenerator.getInstance("AES").generateKey();
             java.security.spec.AlgorithmParameterSpec paramSpec =
                     new javax.crypto.spec.IvParameterSpec(iv);
             c.init(javax.crypto.Cipher.ENCRYPT_MODE, key, paramSpec);
